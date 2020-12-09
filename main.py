@@ -1,4 +1,4 @@
-
+from prettytable import PrettyTable
 
 def complement_base(base):
         
@@ -34,7 +34,7 @@ def complement_base(base):
         return 'D'
     else:
         return 'N'
-        
+
 def reverse_complement(seq):
     
     rev_seq = ''
@@ -62,3 +62,31 @@ def display_complements(seq):
     
 seq = input("Enter: ")
 display_complements(seq)
+print("\n")
+
+
+
+x = PrettyTable()
+
+
+x.field_names = ["Base","Name", "Bases Represented", "Complementary Base"]
+x.add_row(["A"	,"Adenine",	"A",	"T"])
+x.add_row(["T",	"Thymidine", "T",	"A"])
+x.add_row(["U"	,"Uridine(RNA only)",	"U"	,"A"])
+x.add_row(["G",	"Guanidine",	"G",	"C"])
+x.add_row(["C","Cytidine",	"C",	"G"])
+x.add_row(["Y", "pYrimidine",	"C T",	"R"])
+x.add_row(["R", "puRine",	"A G",	"Y"])
+x.add_row(["S", "Strong(3Hbonds)",	"G C"	,"S*"])
+x.add_row(["W", "Weak(2Hbonds)",	"A T",	"W*"])
+x.add_row(["K", "Keto",	"T/U G"	,"M"])
+x.add_row(["M",	"aMino",	"A C",	"K"])
+x.add_row(["B",	"not A",	"C G T",	"V"])
+x.add_row(["D",	"not C",	"A G T",	"H"])
+x.add_row(["H",	"not G",	"A C T",	"D"])
+x.add_row(["V",	"not T/U",	"A C G"	,"B"])
+x.add_row(["N",	"Unknown",	"A C G T",	"N"])
+
+
+print("The IUPAC Degeneracies Table")
+print(x)
